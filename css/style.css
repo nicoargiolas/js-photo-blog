@@ -31,7 +31,7 @@ main {
 }
 
 .container {
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
 }
 
@@ -44,13 +44,13 @@ main {
 
 .post {
     background-color: white;
-    margin-bottom: 20px;
+    margin: 0 10px 20px 10px;
     position: relative;
 }
 
 .pin {
     position: absolute;
-    right: 152px;
+    right: 127px;
     top: -10px;
 }
 
@@ -59,8 +59,8 @@ main {
 }
 
 .img-box img {
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;
 }
 
 .data {
@@ -71,4 +71,14 @@ main {
 .titolo {
     font-size: 20px;
     font-family: "Chewy", monospace;
+}
+
+@media screen and (max-width: 1240px) {
+    .container {
+        width: 75%;
+    }
+
+    .posts-container {
+        justify-content: space-around;
+    }
 }
