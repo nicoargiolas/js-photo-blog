@@ -14,3 +14,30 @@
 // titoli:  ‘Edu Tas Beginner’, sans-serif;
 // date: ‘Sometype Mono’, ‘monospace’;
 // (Dovreste sapere a questo punto cosa e come prendere da GFonts…)
+
+// Collegamento a elementi del DOM
+const postsHTML = document.querySelector('.posts-container');
+
+axios.get('https://lanciweb.github.io/demo/api/pictures/')
+    .then(response => {
+        const posts = response.data;
+        console.table(posts);
+        let counter = posts.length;
+        for (let i = 0; i < counter; i++) {
+            postsHTML.innerHTML += `
+            <div class="post">
+                <img src="./img/pin.svg" alt="" class="pin">
+                <div class="img-box">
+                    <img src="${posts[i].url}" alt="Immagine di ${posts[i].title}">
+                </div>
+                <div class="text-box">
+                    <p class="data"> ${posts[i].date}</p>
+                    <p class="titolo"> ${posts[i].title.toUpperCase()} </p>
+                </div>
+            </div>`
+        }
+    })
+    .catch(error => {
+        console.error(error);
+    });
+

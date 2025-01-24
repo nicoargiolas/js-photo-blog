@@ -13,11 +13,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10000;
 }
 
 header h1 {
     font-size: 70px;
-    font-family: "Sometype Mono", monospace;
+    font-family: "Chewy", monospace;
     font-style: italic;
 }
 
@@ -62,7 +63,12 @@ main {
     width: 300px;
 }
 
-.text-box {
-    margin-bottom: 40px;
-    font-family: "Edu Tas Beginner", sans-serif;;
+.data {
+    font-family: "Sometype Mono", monospace;
+    color: grey;
+}
+
+.titolo {
+    font-size: 20px;
+    font-family: "Chewy", monospace;
 }
