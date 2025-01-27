@@ -47,14 +47,17 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
             postHTML[i].addEventListener("click", () => {
                 // Al click su un post verrà mostrata in pagina l'immagine corrispondente ingrandita sempre usando i riferimenti alle proprietà degli oggetti
                 imgBoxHTML.classList.remove("hide");
-                imgBoxHTML.innerHTML = `<img src="${posts[i].url}" alt="Immagine di ${posts[i].title}">`;
-            });
+                imgBoxHTML.innerHTML = `
+                <div class="close-btn"> CHIUDI </div>
+                <img src="${posts[i].url}" alt="Immagine di ${posts[i].title}">`;
                 // Creo un altro EventListener che mi permette con un altro click di nascondere l'immagine ingrandita e poter di nuovo scorrere tra i post
-            imgBoxHTML.addEventListener("click", () => {
-                imgBoxHTML.classList.add("hide");
-                imgBoxHTML.innerHTML = "";
-            })
-        }
+                const closeBtnHTML = document.querySelector('.close-btn');
+                closeBtnHTML.addEventListener("click", () => {
+                    imgBoxHTML.classList.add("hide");
+                    imgBoxHTML.innerHTML = "";
+                });
+            });
+        };
     })
     .catch(error => {
         console.error(error);
